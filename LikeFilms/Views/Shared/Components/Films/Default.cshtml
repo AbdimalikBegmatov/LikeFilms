@@ -1,0 +1,18 @@
+﻿@model List<LikeFilms.Models.TvShow>;
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card" style="width: 12rem;">
+                <img src="@Url.Content(item.ImageUrl)" alt="@item.Title" class="card-img-top">
+                <div class="card-body">
+                    <a href="@item.ImdbUrl" class="link-info">Go to IMDb</a>
+                    <br/>
+                    <a asp-action="Details" asp-controller="TvShows" asp-route-id="@item.Id" class="link-secondary text-decoration-none">@item.Title</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

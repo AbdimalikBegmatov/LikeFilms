@@ -1,0 +1,20 @@
+﻿@model LikeFilms.Models.CreditCard
+<div>
+    <form method="post">
+        <input asp-for="NumberCard"/>
+        <span asp-validation-for="NumberCard" class="text-danger"></span>
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+<div>
+    @if (Model == null)
+    {
+        <label>No data</label>
+    }
+    else
+    {
+        <label>@Model.NumberCard</label>
+    }
+    
+</div>
